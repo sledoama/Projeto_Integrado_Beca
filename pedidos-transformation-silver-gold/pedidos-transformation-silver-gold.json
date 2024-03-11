@@ -1,0 +1,40 @@
+{
+  "name" : "pedidos-transformation-silver-gold",
+  "jobMode" : "SCRIPT",
+  "description" : "",
+  "role" : "arn:aws:iam::850202893763:role/Glue_Role_Beca_DnA_2024",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://glue-script-path-beca-2024/scripts/pedidos-transformation-silver-gold.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--spark-event-logs-path" : "s3://spark-ui-logs-path-beca/sparkHistoryLogs/",
+    "BRONZE" : "pedidos-bronze",
+    "--enable-job-insights" : "false",
+    "--enable-observability-metrics" : "true",
+    "--enable-glue-datacatalog" : "true",
+    "--enable-continuous-cloudwatch-log" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--job-language" : "python",
+    "--enable-auto-scaling" : "true"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 2,
+  "timeout" : 30,
+  "maxCapacity" : 2.0,
+  "glueVersion" : "4.0",
+  "numberOfWorkers" : 2,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "Projeto_Integrado_Beca",
+    "branch" : "main",
+    "folder" : "pedidos-transformation-silver-gold"
+  }
+}
