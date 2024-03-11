@@ -1,13 +1,17 @@
-# Painel para Análise de Dados de uma Empresa de Vendas
+# Análise de Dados de uma Empresa de Vendas - Painel de Pedidos
 
-Este projeto consiste em um painel para análise dos dados de uma empresa de vendas, abrangendo tanto vendas em loja física quanto no E-commerce. Cada grupo será responsável por responder às perguntas destinadas aos seus respectivos conjuntos de dados.
+Este projeto visa criar um painel de análise de dados para uma empresa de vendas, concentrando-se nos pedidos realizados em suas lojas físicas. Ele emprega o conceito de arquitetura de data mesh para lidar com a complexidade e diversidade dos dados envolvidos. O objetivo é fornecer uma plataforma centralizada que permita uma análise eficaz das informações de pedidos, contribuindo para uma melhor compreensão do desempenho das vendas e possibilitando decisões estratégicas mais informadas.
 
-Utilizando o conceito de arquitetura de Data Mesh, cada um dos 5 grupos terá que desenvolver a disponibilização de seus dados para que todos os grupos tenham acesso a todos os dados, a fim de responder às perguntas destinadas a eles.
+## Objetivo geral
 
-## Grupo de Pedidos
+Com a intenção em expandir as capacidades de dados da empresa para atender às demandas em evolução do departamento de pedidos, nosso time foi encarregado de desenvolver a ingestão, preparação e disponibilização de dados para facilitar essa transição. Como parte de nossas responsabilidades dentro desta nova área, esse projeto visa responder os seguintes tópicos:
 
-Recentemente, a empresa decidiu expandir a sua área de dados para conseguir entregar novas demandas da área de pedidos, e o seu time foi designado para criar a ingestão, preparação e disponibilização desses dados. Com isso, a empresa está se transformando para um novo conceito de arquitetura mesh. Como trabalho da sua nova área, vocês foram destinados a responder as seguintes perguntas:
+1. Identificar os cinco principais produtos em termos de vendas.
+2. Determinar o tempo médio de entrega para os pedidos.
+3. Analisar a distribuição dos métodos de pagamento em relação ao total de pedidos.
 
-1. **Quais foram os cinco produtos mais vendidos?**
-2. **Qual é o tempo médio de entrega dos pedidos?**
-3. **Qual é a taxa de pedidos pagos com cada um dos tipos de pagamentos em relação ao total de pedidos?**
+## Arquitetura implementada:
+ ![image](https://github.com/sledoama/Projeto_Integrado_Beca/assets/160146226/ea4aeff9-ace5-4973-adbb-44ba9c9fc29b)
+
+## Conclusão
+O projeto em si representa um passo crucial para aprimorar as capacidades de dados da empresa e atender às demandas em evolução do departamento de pedidos ao abordar essas questões-chave. Assim, poderemos ampliar a visão de negócio oferecendo suporte para a tomada de decisão e assim impulsionar o crescimento da empresa.
