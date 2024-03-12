@@ -24,10 +24,6 @@ spark = glueContext.spark_session
 job = Job(glueContext)
 job.init(args['JOB_NAME'], args)
 
-# # Sobrescreve as partições necessárias
-# spark.conf.set('spark.sql.sources.partitionOverwriteMode', 'dynamic')
-# spark.conf.set('hive.exec.dynamic.partition.mode', 'nonstrict')
-
 schema = StructType([
     StructField("id_cliente", StringType(), True),
     StructField("data_pedido", TimestampType(), True),
@@ -42,10 +38,6 @@ schema = StructType([
 
 # Lê o arquivo CSV com o schema definido
 df_silver = spark.read.options(delimiter=";", header=True).schema(schema).csv("s3://pedidos-bronze/staging")
-
-# Script generated from df_silver
-#df_silver = spark.read.options(delimiter=";", header=True).csv("s3://pedidos-bronze/staging")
-#df_silver = spark.read.schema(schema).parquet("s3://pedidos-bronze/bronze/")
 
 # Renomeia colunas e também trata a coluna 'forma_de_pagamento'
 df_silver = (df_silver
@@ -86,17 +78,9 @@ df_silver = df_silver.select(
     "data_source"
 )
 
-# s3_bucket_path = "s3://pedidos-silver/pedidos_loja/"
-# mode = "overwrite"
-
-# # Salva o DataFrame em formato Parquet no S3
-# df_silver.write.mode(mode).parquet(s3_bucket_path)
-
 # # Envie o arquivo para o S3
 database = "pedidos-silver"
 tabela = "pedidos_loja"
-# output_path = "s3://pedidos-silver/pedidos_loja/"
-# df_silver.write.insertInto(f"`{database}`.`{tabela}`", overwrite=True)
 
 # Variáveis
 s3_bucket_path = "s3://pedidos-silver/pedidos_loja/"
